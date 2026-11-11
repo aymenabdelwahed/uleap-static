@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ULEAP B.V. – Innovation Gravity</title>
 <meta name="description" content="ULEAP B.V. helps organisations in the Netherlands, Belgium and Luxembourg build secure cloud platforms and migrate to Azure.">
-<script>(function(){var t;try{t=localStorage.getItem("uleap-theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})()</script>
+<script>(function(){var t;try{t=localStorage.getItem("uleap-theme")}catch(e){}if(t!=="dark")t="light";document.documentElement.dataset.theme=t})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -36,7 +36,11 @@ nav .btn{color:#fff;padding:.5rem 1rem}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 .hero{position:relative;overflow:hidden;padding:5.5rem 0 6rem}
-.hero h1{font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.02;letter-spacing:-.035em;font-weight:900;margin:0 0 1.5rem;max-width:13ch}
+.hero h1{font-size:clamp(3.6rem,7.8vw,6.2rem);line-height:1.02;letter-spacing:-.035em;font-weight:900;margin:0 0 1.5rem;max-width:13ch}
+.swap{display:inline-grid;perspective:700px}
+.swap .w{grid-area:1/1;opacity:0;transform:rotateX(-90deg);transition:transform .7s cubic-bezier(.3,.7,.2,1),opacity .15s}
+.swap .w.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.swap .w{transform:none;transition:opacity .8s}}
 .hero p{font-size:1.25rem;max-width:34rem;color:var(--mute);margin:0 0 2.2rem}
 .hero .cta{display:flex;flex-wrap:wrap;gap:.9rem}
 .hero .copy{position:relative;z-index:2}
@@ -50,7 +54,7 @@ nav .btn{color:#fff;padding:.5rem 1rem}
 .fold i:nth-child(6){left:24%;top:0;width:34%;height:30%;background:var(--red-soft);clip-path:polygon(0 0,40% 0,100% 80%,0 80%)}
 @media(prefers-reduced-motion:no-preference){.fold{animation:settle 1.4s cubic-bezier(.2,.7,.2,1) both}
 @keyframes settle{from{transform:translateY(-50%) rotate(40deg) scale(.8);opacity:0}}}
-@media(max-width:800px){nav a:not(.btn){display:none}.fold{opacity:.18;right:-12rem}.hero{padding:3.5rem 0 4rem}}
+@media(max-width:800px){nav a:not(.btn){display:none}.fold{opacity:.18;right:-12rem}.hero{padding:3.5rem 0 4rem}.hero h1{font-size:clamp(2.6rem,13vw,4.4rem)}}
 section{padding:5rem 0}
 h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.025em;font-weight:900;margin:0 0 1rem;max-width:20ch}
 .lead{color:var(--mute);max-width:38rem;margin:0 0 3rem}
@@ -109,7 +113,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
 <div class="hero">
 <div class="fold" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="wrap copy">
-<h1>Leap with Momentum!</h1>
+<h1>Leap with <span class="swap"><span class="w on">Momentum!</span><span class="w" aria-hidden="true">Innovation!</span></span></h1>
 <p>Driven by a culture of creativity and collaboration. We transform tangled tech landschapes into secure, scalable foundations that give your teams the freedom to innovate and ship with precision.</p>
 <div class="cta"><a class="btn" href="#contact">Schedule an introduction</a><a class="btn ghost" href="#expertise">Explore our expertise</a></div>
 </div>
@@ -124,7 +128,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
 <li><h3>DevOps</h3><p>Accelerate delivery without compromising reliability. We automate pipelines, optimize workflows, and standardize environments to ensure consistent, high-velocity releases—from development to production.</p></li>
 <li><h3>DevSecOps</h3><p>Security embedded, not an afterthought. Policy as code, secrets management, software supply chain controls and compliance evidence generated automatically.</p></li>
 <li><h3>Azure Cloud</h3><p>Well-architected landing zones, networking, identity, Kubernetes and cost governance on Microsoft Azure, tailored to the way your organisation operates.</p></li>
-<li><h3>Transformation & Migration</h3><p>Seamless evolution for lasting impact. Whether modernizing legacy systems or transitioning to the cloud, we ensure a smooth, disruption-free journey with measurable outcomes.</p></li>
+<li><h3>Transformation &amp; Migration</h3><p>Seamless evolution for lasting impact. Whether modernizing legacy systems or transitioning to the cloud, we ensure a smooth, disruption-free journey with measurable outcomes.</p></li>
 </ul>
 </div>
 </section>
@@ -145,11 +149,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
 <section class="why" id="why">
 <div class="wrap">
 <h2>Industry Leaders Partner with Us</h2>
-<p class="lead">Elite platform engineers who don't just advise—they engineer, deploy, and take ownership.</p>
+<p class="lead">Elite platform engineers who don’t just advise—they engineer, deploy, and take ownership.</p>
 <div class="cols">
 <div><h3>Security as a Foundation</h3><p>Security and compliance are embedded into every layer of our Azure platforms from day one—never treated as an afterthought.</p></div>
 <div><h3>High-Velocity Delivery</h3><p>We hit the ground running with zero onboarding lag. Expect immediate momentum, clean code, and rapid time-to-market.</p></div>
-<div><h3>Zero Handoffs</h3><p>The specialists architecting your solutions are the ones engineering them, ensuring accountability, preserved context, & rigorous execution from day one.</p></div>
+<div><h3>Zero Handoffs</h3><p>The specialists architecting your solutions are the ones engineering them, ensuring accountability, preserved context, &amp; rigorous execution from day one.</p></div>
 </div>
 </div>
 </section>
@@ -165,7 +169,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
 <div class="wrap">
 <h2>Let’s Shape Your Platform—Together</h2>
 <p>Share your goals, challenges, or vision with us. We respond within one business day.<br>
-Email us on 'contact@uleap.nl' or reach out directly below — We are ready to listen.</p>
+Email us on ‘contact@uleap.nl’ or reach out directly below — We are ready to listen.</p>
 <form id="cf" class="cf"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" required><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" type="text" required><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="6" required></textarea><button class="btn" type="submit">Send message</button><p id="cf-status" role="status"></p></form>
 <dl><dt>Company</dt><dd>ULEAP B.V.</dd><dt>Location</dt><dd>The Netherlands</dd><dt>Service area</dt><dd>BeNeLux</dd><dt>KVK Number</dt><dd>87971836</dd></dl>
 </div>
@@ -177,6 +181,9 @@ document.getElementById('cf').addEventListener('submit',function(e){e.preventDef
 </script>
 <script>
 (function(){var b=document.getElementById("tgl"),r=document.documentElement;function sync(){b.setAttribute("aria-checked",r.dataset.theme==="dark")}sync();b.addEventListener("click",function(){var t=r.dataset.theme==="dark"?"light":"dark";r.dataset.theme=t;try{localStorage.setItem("uleap-theme",t)}catch(e){}sync()})})();
+</script>
+<script>
+(function(){var w=document.querySelectorAll(".swap .w"),i=0;if(w.length<2)return;setInterval(function(){w[i].classList.remove("on");w[i].setAttribute("aria-hidden","true");i=(i+1)%w.length;w[i].classList.add("on");w[i].removeAttribute("aria-hidden")},3800)})();
 </script>
 </body>
 </html>
